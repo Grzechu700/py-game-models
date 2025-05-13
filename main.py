@@ -26,7 +26,11 @@ def main() -> None:
         for skill_data in player_data['skills']:
             Skill.objects.get_or_create(
                 name=skill_data['name'],
-                defaults={'bonus': skill_data['bonus'], 'race': race}
+                defaults={
+                    'bonus': int(skill_data['bonus']),
+                    # lub float(skill_data['bonus']) jeśli bonusy są liczbami zmiennoprzecinkowymi
+                    'race': race
+                }
             )
 
         # Stwórz gracza
