@@ -27,7 +27,7 @@ def main() -> None:
             Skill.objects.get_or_create(
                 name=skill_data['name'],
                 defaults={
-                    'bonus': int(skill_data['bonus']),
+                    'bonus': float(skill_data['bonus']),
                     # lub float(skill_data['bonus']) jeśli bonusy są liczbami zmiennoprzecinkowymi
                     'race': race
                 }
